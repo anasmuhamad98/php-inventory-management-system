@@ -104,7 +104,7 @@ $connect->close();
 		  </div>
 
 		  <div class="cardContainer">
-		    <p> INR Total Revenue</p>
+		    <p> MYR Total Revenue</p>
 		  </div>
 		</div> 
 
@@ -136,6 +136,34 @@ $connect->close();
 				<!--<div id="calendar"></div>-->
 			</div>	
 		</div>
+		
+		<!-- start of promotion package table -->
+		<div class="panel panel-default">
+			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Promotion Packages</div>
+			<div class="panel-body">
+				<table class="table" id="productTable">
+			  	<thead>
+			  		<tr>			  			
+						<th style="width:40%;">Product</th>
+						<th style="width:20%;">Sales</th>  
+			  			<th style="width:20%;">Growth</th>
+			  		</tr>
+			  	</thead>
+			  	<tbody>
+					<?php while ($orderResult = $userwiseQuery->fetch_assoc()) { ?>
+						<tr>
+							<td><?php echo $orderResult['username']?></td>
+							<td><?php echo $orderResult['totalorder']?></td>
+							
+						</tr>
+						
+					<?php } ?>
+				</tbody>
+				</table>
+				<!--<div id="calendar"></div>-->
+			</div>	
+		</div>
+		<!-- end of promotion package table -->
 		
 	</div> 
 	<?php  } ?>

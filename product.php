@@ -24,6 +24,7 @@
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
+							<th>ID</th>
 							<th style="width:10%;">Photo</th>							
 							<th>Product Name</th>
 							<th>Rate</th>							
@@ -31,7 +32,7 @@
 							<th>Brand</th>
 							<th>Category</th>
 							<th>Status</th>
-							<th style="width:15%;">Options</th>
+							<th style="width:15%;">Option</th>
 						</tr>
 					</thead>
 				</table>
@@ -193,7 +194,7 @@
 				    	<div id="edit-productPhoto-messages"></div>
 
 				    	<div class="form-group">
-			        	<label for="editProductImage" class="col-sm-3 control-label">Product Image: </label>
+			        	<label for="editProductImage" class="col-sm-3 control-label">Product Imageasdasd: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">							    				   
 						      <img src="" id="getProductImage" class="thumbnail" style="width:250px; height:250px;" />
