@@ -139,7 +139,7 @@ $connect->close();
 		
 		<!-- start of promotion package table -->
 		<div class="panel panel-default">
-			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Promotion Packages</div>
+			<div class="panel-heading"> <i class="	glyphicon glyphicon-star-empty"></i> Promotion Packages</div>
 			<div class="panel-body">
 				<table class="table" id="productTable">
 			  	<thead>
