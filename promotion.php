@@ -1,12 +1,12 @@
-<?php require_once 'php_action/db_connect.php' ?>
 <?php require_once 'includes/header.php'; ?>
+
 
 <div class="row">
 	<div class="col-md-12">
 
 		<ol class="breadcrumb">
-		  <li><a href="dashboard.php">Home</a></li>		  
-		  <li class="active">Product</li>
+		  <li><a href="promotion.php">Home</a></li>		  
+		  <li class="active">Promotion</li>
 		</ol>
 
 		<div class="panel panel-default">
@@ -20,8 +20,7 @@
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
 					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product </button>
 				</div> <!-- /div-action -->				
-			
-				</div>
+				
 				<table class="table" id="manageProductTable">
 					<thead>
 						<tr>
@@ -351,6 +350,6 @@
 <!-- /categories brand -->
 
 
-<script src="custom/js/product.js"></script>
+<script src="custom/js/promotion.js"></script>
 
 <?php require_once 'includes/footer.php'; ?>

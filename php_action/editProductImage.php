@@ -2,6 +2,8 @@
 
 require_once 'core.php';
 
+//saja test letak comment 
+
 $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST) {		
