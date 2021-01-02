@@ -3,7 +3,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "store";
 $store_url = "http://localhost/php-inventory-management-system/";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
