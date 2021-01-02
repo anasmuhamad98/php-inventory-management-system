@@ -10,7 +10,7 @@ $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
-$totalRevenue = "";
+$totalRevenue = "0";
 while ($orderResult = $orderQuery->fetch_assoc()) {
 	$totalRevenue += $orderResult['paid'];
 }
@@ -119,7 +119,7 @@ $connect->close();
 			  	<thead>
 			  		<tr>			  			
 			  			<th style="width:40%;">Name</th>
-			  			<th style="width:20%;">Orders in Rupees</th>
+			  			<th style="width:20%;">Orders in MYR</th>
 			  		</tr>
 			  	</thead>
 			  	<tbody>
