@@ -10,7 +10,7 @@
 		</ol>
 	</div>
 </div>
-
+<!-- test untuk master -->
 <!-- categories brand -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeProductModal">
   <div class="modal-dialog">
