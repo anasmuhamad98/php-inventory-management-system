@@ -10,6 +10,10 @@ $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
+$productSql = "SELECT * FROM product ORDER BY quantity ";
+$productQuery = $connect->query($productSql);
+$countP= $productQuery->num_rows;
+
 $totalRevenue = "0";
 while ($orderResult = $orderQuery->fetch_assoc()) {
 	$totalRevenue += $orderResult['paid'];
@@ -138,10 +142,41 @@ $connect->close();
 		</div>
 		
 	</div> 
+	<div class="col-md-8"  >
+		<div class="panel panel-default" >
+			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Products Ranking</div>
+			<div class="panel-body" style="overflow-y:auto; max-height:500px" >
+				<table class="table" id="productTable">
+			  	<thead>
+			  		<tr>			  			
+			  			<th style="width:40%;">Product</th>
+			  			<th style="width:20%;">Total sold</th>
+			  		</tr>
+			  	</thead>
+			  	<tbody>
+					<?php while ($p=$productQuery->fetch_assoc()) { ?>
+						<tr style="border-radius:10px;">
+							<?php if ($p['quantity']!=10) {?>
+							<td><?php echo $p['product_name']?></td>
+							<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php  echo 10-$p['quantity']?></td>
+							<?php } ?>
+						</tr>
+						
+					<?php } ?>
+				</tbody>
+				</table>
+				<!--<div id="calendar"></div>-->
+			</div>	
+		</div>
+		
+	</div> 
 	<?php  } ?>
 	
 </div> <!--/row-->
-
+<style>
+	tr:nth-child(even) {background-color: #f2f2f2;}
+	
+</style>
 <!-- fullCalendar 2.2.5 -->
 <script src="assests/plugins/moment/moment.min.js"></script>
 <script src="assests/plugins/fullcalendar/fullcalendar.min.js"></script>
