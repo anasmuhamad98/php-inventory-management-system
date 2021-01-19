@@ -30,7 +30,7 @@ $userwieseOrder = $userwiseQuery->num_rows;
 $connect->close();
 
 ?>
-//hai saya comment
+
 
 <style type="text/css">
 	.ui-datepicker-calendar {
@@ -142,6 +142,8 @@ $connect->close();
 		</div>
 		
 	</div> 
+
+	<!--Product Ranking-->
 	<div class="col-md-8"  >
 		<div class="panel panel-default" >
 			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Products Ranking</div>
@@ -169,7 +171,7 @@ $connect->close();
 			</div>	
 		</div>
 		
-	</div> 
+	</div> <!--/Product Ranking-->
 	<?php  } ?>
 	
 </div> <!--/row-->
