@@ -86,10 +86,10 @@ if($_GET['o'] == 'add') {
 			  	<thead>
 			  		<tr>			  			
 			  			<th style="width:40%;">Product</th>
-			  			<th style="width:20%;">Price</th>
+			  			<th style="width:20%; padding-left:2%" >Price</th>
 			  			<th style="width:10%;">Available Quantity</th>
 			  			<th style="width:15%;">Quantity</th>			  			
-			  			<th style="width:25%;">Total</th>			  			
+			  			<th style="width:25%; padding-left:2%">Total</th>			  			
 			  			<th style="width:10%;"></th>
 			  		</tr>
 			  	</thead>
