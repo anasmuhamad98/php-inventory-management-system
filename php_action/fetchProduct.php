@@ -19,7 +19,7 @@ if($result->num_rows > 0) {
 
  // $row = $result->fetch_array();
  $active = ""; 
-
+$x = 1;
  while($row = $result->fetch_array()) {
  	$productId = $row[0];
  	// active 
@@ -57,7 +57,7 @@ if($result->num_rows > 0) {
 	$productImage = "<img class='img-round' src='".$imageUrl."' style='height:30px; width:50px;'  />";
 
  	$output['data'][] = array( 	
-		$productId,
+		$x,
  		// image
  		$productImage,
  		// product name
@@ -74,7 +74,8 @@ if($result->num_rows > 0) {
  		$active,
  		// button
  		$button 		
- 		); 	
+		 ); 	
+		 $x++;
  } // /while 
 
 }// if num_rows
