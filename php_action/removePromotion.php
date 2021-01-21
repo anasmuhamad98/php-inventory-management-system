@@ -9,9 +9,10 @@ $promoId = $_POST['promoId'];
 
 if($promoId) { 
 
- $sql = "UPDATE promotions SET promo_status = 2 WHERE promotion_id = {$promoId}";
+ $sql = "DELETE FROM promotions WHERE promotion_id = {$promoId}";
+ $itemsql = "DELETE FROM promotion_item WHERE promotion_id = {$promoId}";
 
- if($connect->query($sql) === TRUE) {
+ if($connect->query($sql) === TRUE && $connect->query($itemsql) === TRUE) {
  	$valid['success'] = true;
 	$valid['messages'] = "Successfully Removed";		
  } else {
