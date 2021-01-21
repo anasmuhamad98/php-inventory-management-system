@@ -51,10 +51,11 @@ require_once 'includes/header.php';
 					<thead>
 						<tr>
 							<th style="width:8%;">#</th>
-							<th>Total Price</th>
+							<th style="width:12%;">Total Price</th>
 							<th>List of Products</th>
-							<th style="width:15%;">Status</th>
-							<th style="width:15%;">Options</th>
+							<th style="width:12%;">Total Product</th>
+							<th style="width:10%;">Status</th>
+							<th style="width:10%;">Options</th>
 						</tr>
 					</thead>
 				</table>
@@ -126,7 +127,7 @@ require_once 'includes/header.php';
 
 
 <!-- remove promotion -->
-<div class="modal fade" tabindex="-1" role="dialog" id="removeMemberModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="removePromoModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">

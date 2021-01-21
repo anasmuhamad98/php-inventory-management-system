@@ -27,17 +27,21 @@ if ($_POST) {
         $totalProduct++;
     }
     
-    $x = 1;
-    while ($x <= $budgetPromotion) {
+    $x = 0;
+    while ($x < $budgetPromotion) {
         $randNumber = (rand(1, $totalProduct));
         $pricesql = "SELECT * FROM product WHERE product.product_id = $randNumber";
         $priceresult = $connect->query($pricesql);
         $priceProduct = $priceresult->fetch_array();
+        if($x+$priceProduct[6] < $budgetPromotion){
         $itemsql = "INSERT INTO promotion_item (promotion_id, product_id, quantity, rate, total, promo_item_status) VALUES ('$promotion_id', '$randNumber', 1, '$priceProduct[6]', '$budgetPromotion', 1)";
         if ($connect->query($itemsql) === TRUE) {
             $orderStatus = true;
         }
         $x= $x + $priceProduct[6];
+    }else{
+        $x += $budgetPromotion;
+    }
     }
 
 
