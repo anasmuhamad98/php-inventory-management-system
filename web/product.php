@@ -18,7 +18,6 @@
 				<div class="remove-messages"></div>
 				<div class="div-action pull pull-left" style="padding-bottom:20px;">
 					<select id="categorychange" style="padding:8px; margin-top:5px; border-color:#cccccc; background:#f2f2f2; border-radius:5px; outline:none;" onchange="category()">
-					<option value="">Category</option>
 					<option value="0">All</option>
 					<option value="1">Cleanser</option>
 					<option value="2">Toner</option>
