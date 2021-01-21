@@ -22,22 +22,23 @@ if ($result->num_rows > 0) {
 
 		if ($promoresult->num_rows > 0) {
 
-
+			$totalProduct = 0;
 			while ($row2 = $promoresult->fetch_array()) {
 
-					if ($row2[1] == $promoId) {
+				if ($row2[1] == $promoId) {
 
-						$productsql = "SELECT * FROM product WHERE product_id = $row2[2]";
-						$productresult = $connect->query($productsql);
-						$row3 = $productresult->fetch_array();
-						$items = $row3[1];
+					$productsql = "SELECT * FROM product WHERE product_id = $row2[2]";
+					$productresult = $connect->query($productsql);
+					$row3 = $productresult->fetch_array();
+					$items = $row3[1];
 
-						// array_push($promoItemoutput, $items);
+					// array_push($promoItemoutput, $items);
 
-						$promoItemoutput[] = array(
-							" {$items}"
-						);
-							}
+					$promoItemoutput[] = array(
+						" {$items}"
+					);
+					$totalProduct++;
+				}
 			}
 		}
 
@@ -52,19 +53,14 @@ if ($result->num_rows > 0) {
 
 		$button = '<!-- Single button -->
 	<div class="btn-group">
-	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Action <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu">
-	    <li><a type="button" data-toggle="modal" data-target="#editPromotionModel" onclick="editBrands(' . $promoId . ')"> <i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-	    <li><a type="button" data-toggle="modal" data-target="#removeMemberModal" onclick="removeBrands(' . $promoId . ')"> <i class="glyphicon glyphicon-trash"></i> Remove</a></li>       
-	  </ul>
+	    <button type="button" data-toggle="modal" data-target="#removePromoModal" onclick="removePromos(' . $promoId . ')"> <i class="glyphicon glyphicon-trash"></i> Remove</button>    
 	</div>';
 
 		$output['data'][] = array(
 			$x,
 			$row[1],
 			$promoItemoutput,
+			$totalProduct,
 			$statusPromo,
 			$button
 		);

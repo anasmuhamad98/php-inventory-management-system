@@ -543,7 +543,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="due" class="col-sm-3 control-label">Due Amount</label>
 			    <div class="col-sm-9">
-			      <input type="text" class="form-control" id="due" name="due" disabled="true" />					
+			      <input type="number" class="form-control" id="due" name="due" disabled="true" />					
 			    </div>
 			  </div> <!--/form-group-->		
 			  <div class="form-group">

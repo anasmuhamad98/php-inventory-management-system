@@ -4,10 +4,10 @@ $(document).ready(function() {
 	// top nav bar 
 	$('#navProduct').addClass('active');
 	// manage product data table
-	manageProductTable = $('#manageProductTable').DataTable({
-		'ajax': 'php_action/fetchProduct.php',
-		'order': []
-	});
+	// manageProductTable = $('#manageProductTable').DataTable({
+	// 	'ajax': 'php_action/fetchProduct.php',
+	// 	'order': []
+	// });
 
 	// add product modal btn clicked
 	$("#addProductModalBtn").unbind('click').bind('click', function() {
@@ -542,4 +542,73 @@ function clearForm(oForm) {
 	// 	        break;
 	//     } // /switch
 	// 	} // for
+}
+
+function category(){
+ var c = document.getElementById('categorychange').value;
+
+if(c==="0"){
+	manageProductTable = $('#manageProductTable').DataTable({
+		'ajax': 'php_action/fetchProduct.php',
+		'order': [],
+		destroy:true
+	});
+}
+
+if(c==="1"){
+manageProductTable = $('#manageProductTable').DataTable({
+			'ajax': 'php_action/fetchProductCleanser.php',
+			'order': [],
+			destroy:true
+		});
+}
+if(c==="2"){
+	manageProductTable = $('#manageProductTable').DataTable({
+				'ajax': 'php_action/fetchProductToner.php',
+				'order': [],
+				destroy:true
+			});
+	}if(c==="3"){
+		manageProductTable = $('#manageProductTable').DataTable({
+					'ajax': 'php_action/fetchProductMosturizer.php',
+					'order': [],
+					destroy:true
+				});
+		
+		}if(c==="4"){
+
+			manageProductTable = $('#manageProductTable').DataTable({
+						'ajax': 'php_action/fetchProductSerum.php',
+						'order': [],
+						destroy:true
+					});
+			
+			}if(c==="5"){
+
+				manageProductTable = $('#manageProductTable').DataTable({
+							'ajax': 'php_action/fetchProductEssence.php',
+							'order': [],
+							destroy:true
+						});
+				
+				}if(c==="6"){
+
+					manageProductTable = $('#manageProductTable').DataTable({
+								'ajax': 'php_action/fetchProductAcneTreatment.php',
+								'order': [],
+								destroy:true
+							});
+					
+					}if(c==="7"){
+
+						manageProductTable = $('#manageProductTable').DataTable({
+									'ajax': 'php_action/fetchProductEyeTreatment.php',
+									'order': [],
+									destroy:true
+								});
+						
+						}
+
+	
+
 }
