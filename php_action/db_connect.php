@@ -20,7 +20,7 @@ $localhost = "localhost";
 $username = "root";
 $password = "";
 $dbname = "test";
-$store_url = "http://localhost/php-inventory-management-system/";
+$store_url = "https://inventory-management-sme.herokuapp.com/";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
 // check connection
