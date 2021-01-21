@@ -10,7 +10,7 @@ $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
-$productSql = "SELECT * FROM product ORDER BY quantity ";
+$productSql = "SELECT * FROM product WHERE quantity!=10 ORDER BY quantity LIMIT 5";
 $productQuery = $connect->query($productSql);
 $countP= $productQuery->num_rows;
 
@@ -147,7 +147,7 @@ $connect->close();
 	<div class="col-md-8"  >
 		<div class="panel panel-default" >
 			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Products Ranking</div>
-			<div class="panel-body" style="overflow-y:auto; max-height:500px" >
+			<div class="panel-body"  >
 				<table class="table" id="productTable">
 			  	<thead>
 			  		<tr>	
@@ -158,7 +158,7 @@ $connect->close();
 			  	</thead>
 			  	<tbody>
 				  
-					<?php $x=-39; while ($p=$productQuery->fetch_assoc()) { ?>
+					<?php $x=1; while ($p=$productQuery->fetch_assoc()) { ?>
 						<tr style="border-radius:10px;">
 							<?php if ($p['quantity']!=10) {?>
 								<td><?php echo $x?></td>
