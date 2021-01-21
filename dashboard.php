@@ -148,21 +148,28 @@ $connect->close();
 			<div class="panel-body" style="overflow-y:auto; max-height:500px" >
 				<table class="table" id="productTable">
 			  	<thead>
-			  		<tr>			  			
-			  			<th style="width:40%;">Product</th>
-			  			<th style="width:20%;">Total sold</th>
+			  		<tr>	
+					  <th style="width:8%;">#</th>		  			
+			  			<th style="width:36%;">Product</th>
+			  			<th style="width:16%;">Total sold</th>
 			  		</tr>
 			  	</thead>
 			  	<tbody>
-					<?php while ($p=$productQuery->fetch_assoc()) { ?>
+				  
+					<?php $x=-39; while ($p=$productQuery->fetch_assoc()) { ?>
 						<tr style="border-radius:10px;">
 							<?php if ($p['quantity']!=10) {?>
+								<td><?php echo $x?></td>
 							<td><?php echo $p['product_name']?></td>
 							<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php  echo 10-$p['quantity']?></td>
 							<?php } ?>
 						</tr>
 						
-					<?php } ?>
+					<?php
+					$x++;
+				 } 
+					
+					?>
 				</tbody>
 				</table>
 				<!--<div id="calendar"></div>-->
