@@ -11,3 +11,5 @@ $(document).ready(function() {
 	});
 
 }); // document.ready fucntion
+
+TextDecoderStream;
