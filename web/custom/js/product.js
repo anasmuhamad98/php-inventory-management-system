@@ -3,11 +3,11 @@ var manageProductTable;
 $(document).ready(function() {
 	// top nav bar 
 	$('#navProduct').addClass('active');
-	// manage product data table
-	// manageProductTable = $('#manageProductTable').DataTable({
-	// 	'ajax': 'php_action/fetchProduct.php',
-	// 	'order': []
-	// });
+	//manage product data table
+	manageProductTable = $('#manageProductTable').DataTable({
+		'ajax': 'php_action/fetchProduct.php',
+		'order': []
+	});
 
 	// add product modal btn clicked
 	$("#addProductModalBtn").unbind('click').bind('click', function() {
