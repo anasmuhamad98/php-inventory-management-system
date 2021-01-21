@@ -16,6 +16,19 @@
 			<div class="panel-body">
 
 				<div class="remove-messages"></div>
+				<div class="div-action pull pull-left" style="padding-bottom:20px;">
+					<select id="categorychange" style="padding:8px; margin-top:5px; border-color:#cccccc; background:#f2f2f2; border-radius:5px; outline:none;" onchange="category()">
+					<option value="">Category</option>
+					<option value="0">All</option>
+					<option value="1">Cleanser</option>
+					<option value="2">Toner</option>
+					<option value="3">Moisturizer</option>
+					<option value="4">Serum</option>
+					<option value="5">Essence</option>
+					<option value="6">Acne Treatment</option>
+					<option value="7">Eye Treatment</option>
+					</select>
+				</div>
 
 				<div class="div-action pull pull-right" style="padding-bottom:20px;">
 					<button class="btn btn-default button1" data-toggle="modal" id="addProductModalBtn" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product </button>
