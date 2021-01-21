@@ -5,7 +5,7 @@ require_once 'php_action/db_connect.php';
 session_start();
 
 if(isset($_SESSION['userId'])) {
-	header('location:'.$store_url.'dashboard.php');		
+	header('location:'.$store_url.'new/dashboard.php');		
 }
 
 $errors = array();
