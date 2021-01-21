@@ -75,3 +75,5 @@ $(document).ready(function () {
 	}); // /submit promotiom form function
 
 }); // document.ready fucntion
+
+TextDecoderStream;
