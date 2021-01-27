@@ -8,7 +8,7 @@ $(document).ready(function() {
 		}
 		else
 		{
-			$(".gst").text("GST 18%");	
+			$(".gst").text("SST 6%");	
 		}
 });
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
 			} // /else
 
 			if(discount == "") {
-				$("#discount").after('<p class="text-danger"> The Discount field is required </p>');
+				$("#discount").after('<p class="text-danger"> The Discount Amount field is required </p>');
 				$('#discount').closest('.form-group').addClass('has-error');
 			} else {
 				$('#discount').closest('.form-group').addClass('has-success');
@@ -239,7 +239,7 @@ $(document).ready(function() {
 			} // /else
 
 			if(discount == "") {
-				$("#discount").after('<p class="text-danger"> The Discount field is required </p>');
+				$("#discount").after('<p class="text-danger"> The Discount Amount field is required </p>');
 				$('#discount').closest('.form-group').addClass('has-error');
 			} else {
 				$('#discount').closest('.form-group').addClass('has-success');

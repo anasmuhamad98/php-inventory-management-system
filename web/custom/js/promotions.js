@@ -57,14 +57,11 @@ $(document).ready(function () {
 							'</div>');
 
 						$(".success-messages").delay(500).show(10, function () {
-							$(this).delay(3000).hide(10, function () {
-								$(this).remove();
-							});
+							$(this).delay(3000).hide(10, function (){});
+							
 						}); // /.alert
 
 						$("html, body, div.panel, div.pane-body").animate({ scrollTop: '0px' }, 100);
-
-
 					} else {
 						alert(response.messages);
 					}
@@ -76,4 +73,63 @@ $(document).ready(function () {
 
 }); // document.ready fucntion
 
-TextDecoderStream;
+
+function removePromos(promoId = null) {
+	if(promoId) {
+		$('#removePromoId').remove();
+		$.ajax({
+			url: 'php_action/fetchSelectedPromos.php',
+			type: 'post',
+			data: {promoId : promoId},
+			dataType: 'json',
+			success:function(response) {
+				$('.removePromotionFooter').after('<input type="hidden" name="removePromoId" id="removePromoId" value="'+response.promotion_id+'" /> ');
+
+				// click on remove button to remove the brand
+				$("#removePromotionBtn").unbind('click').bind('click', function() {
+					// button loading
+					$("#removePromotionBtn").button('loading');
+
+					$.ajax({
+						url: 'php_action/removePromotion.php',
+						type: 'post',
+						data: {promoId : promoId},
+						dataType: 'json',
+						success:function(response) {
+							console.log(response);
+							// button loading
+							$("#removePromotionBtn").button('reset');
+							if(response.success == true) {
+
+								// hide the remove modal 
+								$('#removePromoModal').modal('hide');
+
+								// reload the brand table 
+								managePromotionTable.ajax.reload(null, false);
+								
+								$('.remove-messages').html('<div class="alert alert-success">'+
+			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+			          '</div>');
+
+			  	  			$(".alert-success").delay(500).show(10, function() {
+										$(this).delay(3000).hide(10, function() {
+											$(this).remove();
+										});
+									}); // /.alert
+							} else{
+								
+							}
+						} // /response messages
+					}); // /ajax function to remove the brand
+
+				}); // /click on remove button to remove the brand
+
+			} // /success
+		}); // /ajax
+
+		$('.removePromotionFooter').after();
+	} else {
+		alert('error!! Refresh the page again');
+	}
+} // /remove brands function

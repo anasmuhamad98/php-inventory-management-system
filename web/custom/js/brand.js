@@ -1,4 +1,5 @@
 var manageBrandTable;
+var productDiv;
 
 $(document).ready(function() {
 	// top bar active
@@ -267,3 +268,4 @@ function removeBrands(brandId = null) {
 		alert('error!! Refresh the page again');
 	}
 } // /remove brands function
+

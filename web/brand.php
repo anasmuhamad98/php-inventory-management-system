@@ -166,6 +166,10 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /remove brand -->
+
+
+
+
 <!--test-->
 
 <script src="custom/js/brand.js"></script>

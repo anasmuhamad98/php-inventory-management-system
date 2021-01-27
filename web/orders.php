@@ -78,7 +78,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
+			      <input type="number" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->			  
 
@@ -86,10 +86,10 @@ if($_GET['o'] == 'add') {
 			  	<thead>
 			  		<tr>			  			
 			  			<th style="width:40%;">Product</th>
-			  			<th style="width:20%;">Rate</th>
+			  			<th style="width:20%; padding-left:2%" >Price</th>
 			  			<th style="width:10%;">Available Quantity</th>
 			  			<th style="width:15%;">Quantity</th>			  			
-			  			<th style="width:25%;">Total</th>			  			
+			  			<th style="width:25%; padding-left:2%">Total</th>			  			
 			  			<th style="width:10%;"></th>
 			  		</tr>
 			  	</thead>
@@ -162,9 +162,9 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
-				    <label for="discount" class="col-sm-3 control-label">Discount</label>
+				    <label for="discount" class="col-sm-3 control-label">Discount Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
+				      <input type="number" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
@@ -175,7 +175,7 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
-				    <label for="vat" class="col-sm-3 control-label gst">GST 18%</label>
+				    <label for="vat" class="col-sm-3 control-label gst">SST 6%</label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="vat" name="gstn" readonly="true" />
 				      <input type="hidden" class="form-control" id="vatValue" name="vatValue" />
@@ -187,7 +187,7 @@ if($_GET['o'] == 'add') {
 			  	<div class="form-group">
 				    <label for="paid" class="col-sm-3 control-label">Paid Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" />
+				      <input type="number" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" />
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
@@ -296,7 +296,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" value="<?php echo $data[3] ?>" />
+			      <input type="number" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" value="<?php echo $data[3] ?>" />
 			    </div>
 			  </div> <!--/form-group-->			  
 
@@ -304,10 +304,10 @@ if($_GET['o'] == 'add') {
 			  	<thead>
 			  		<tr>			  			
 			  			<th style="width:40%;">Product</th>
-			  			<th style="width:20%;">Rate</th>
+			  			<th style="width:20%;padding-left:2%">Price</th>
 			  			<th style="width:15%;">Available Quantity</th>			  			
 			  			<th style="width:15%;">Quantity</th>			  			
-			  			<th style="width:15%;">Total</th>			  			
+			  			<th style="width:15%;padding-left:2%">Total</th>			  			
 			  			<th style="width:10%;"></th>
 			  		</tr>
 			  	</thead>
@@ -414,9 +414,9 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
-				    <label for="discount" class="col-sm-3 control-label">Discount</label>
+				    <label for="discount" class="col-sm-3 control-label">Discount Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" value="<?php echo $data[7] ?>" />
+				      <input type="number" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" value="<?php echo $data[7] ?>" />
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
@@ -427,7 +427,7 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
-				    <label for="vat" class="col-sm-3 control-label gst"><?php if($data[13] == 2) {echo "IGST 18%";} else echo "GST 18%"; ?></label>
+				    <label for="vat" class="col-sm-3 control-label gst"><?php if($data[13] == 2) {echo "IGST 18%";} else echo "SST 6%"; ?></label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="vat" name="vat" disabled="true" value="<?php echo $data[5] ?>"  />
 				      <input type="hidden" class="form-control" id="vatValue" name="vatValue" value="<?php echo $data[5] ?>"  />
@@ -445,7 +445,7 @@ if($_GET['o'] == 'add') {
 			  	<div class="form-group">
 				    <label for="paid" class="col-sm-3 control-label">Paid Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" value="<?php echo $data[9] ?>"  />
+				      <input type="number" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" value="<?php echo $data[9] ?>"  />
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
@@ -543,7 +543,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="due" class="col-sm-3 control-label">Due Amount</label>
 			    <div class="col-sm-9">
-			      <input type="text" class="form-control" id="due" name="due" disabled="true" />					
+			      <input type="number" class="form-control" id="due" name="due" disabled="true" />					
 			    </div>
 			  </div> <!--/form-group-->		
 			  <div class="form-group">
