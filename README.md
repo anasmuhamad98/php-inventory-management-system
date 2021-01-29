@@ -3,3 +3,6 @@
 Click this link to open our website.
 
 https://inventory-management-sme.herokuapp.com/
+
+username :admin
+password :admin
