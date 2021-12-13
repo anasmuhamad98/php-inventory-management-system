@@ -29,6 +29,7 @@ $userwieseOrder = $userwiseQuery->num_rows;
 
 $connect->close();
 echo gethostname();
+echo get_current_user();
 ?>
 
 
@@ -43,12 +44,14 @@ echo gethostname();
     <link rel="stylesheet" href="assests/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
 echo gethostname();
+echo get_current_user();
 <div class="row">
 	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
 	<div class="col-md-4">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				$hostname = gethostname();
+				echo get_current_user();
 				<a href="product.php" style="text-decoration:none;color:black;">
 					Total Product
 					<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
@@ -71,7 +74,9 @@ echo gethostname();
 	</div> <!--/col-md-4-->
 	
 	
-	<?php } echo gethostname();?>  
+	<?php } echo gethostname();
+	echo get_current_user();
+	?>  
 		<div class="col-md-4">
 			<div class="panel panel-info">
 			<div class="panel-heading">
