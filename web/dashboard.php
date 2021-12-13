@@ -5,7 +5,6 @@
 $sql = "SELECT * FROM product WHERE status = 1";
 $query = $connect->query($sql);
 $countProduct = $query->num_rows;
-$hostname = gethostname();
 
 $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
@@ -29,7 +28,7 @@ $userwiseQuery = $connect->query($userwisesql);
 $userwieseOrder = $userwiseQuery->num_rows;
 
 $connect->close();
-
+echo gethostname();
 ?>
 
 
@@ -43,16 +42,16 @@ $connect->close();
     <link rel="stylesheet" href="assests/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="assests/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
-
+echo gethostname();
 <div class="row">
 	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
 	<div class="col-md-4">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				
+				$hostname = gethostname();
 				<a href="product.php" style="text-decoration:none;color:black;">
 					Total Product
-					<span class="badge pull pull-right"><?php echo $hostname; ?></span>	
+					<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
 				</a>
 				
 			</div> <!--/panel-hdeaing-->
@@ -72,7 +71,7 @@ $connect->close();
 	</div> <!--/col-md-4-->
 	
 	
-	<?php } ?>  
+	<?php } echo gethostname();?>  
 		<div class="col-md-4">
 			<div class="panel panel-info">
 			<div class="panel-heading">
