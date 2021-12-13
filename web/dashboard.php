@@ -5,6 +5,7 @@
 $sql = "SELECT * FROM product WHERE status = 1";
 $query = $connect->query($sql);
 $countProduct = $query->num_rows;
+$currentuser = get_current_user();
 
 $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
@@ -54,7 +55,7 @@ echo get_current_user();
 				echo get_current_user();
 				<a href="product.php" style="text-decoration:none;color:black;">
 					Total Product
-					<span class="badge pull pull-right"><?php echo $countProduct; ?></span>	
+					<span class="badge pull pull-right"><?php echo $currentuser; ?></span>	
 				</a>
 				
 			</div> <!--/panel-hdeaing-->
